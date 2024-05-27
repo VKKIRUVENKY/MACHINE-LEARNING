@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+def tanh(x):
+    return np.tanh(x)
+random_val= np.random.randn(100)
+sigmoid_val = sigmoid(random_val)
+tanh_val = tanh(random_val)
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 2, 1)
+plt.plot(random_val, sigmoid_val, 'g.', label='Sigmoid')
+plt.title('Sigmoid Function')
+plt.xlabel('Random Values')
+plt.ylabel('Sigmoid Values')
+plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.plot(random_val, tanh_val, 'k.', label='Tanh')
+plt.title('Tanh Function')
+plt.xlabel('Random Values')
+plt.ylabel('Tanh Values')
+plt.legend()
+plt.tight_layout()
+plt.show()
